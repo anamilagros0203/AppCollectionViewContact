@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCollectionViewContact.MainPage" BackgroundColor="Orange" Title="Contact">
+
+    <CollectionView Margin="10" ItemsSource="{Binding contacts}" HeightRequest="500">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Padding="8" CornerRadius="30" BackgroundColor="AliceBlue" BorderColor="Orange">
+                    <Grid HeightRequest="155" Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".3*"/>
+                            <ColumnDefinition Width=".7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".5*"/>
+                            <RowDefinition Height=".5*"/>
+                            <RowDefinition Height=".5*"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.RowSpan="4" Source="{Binding Image}"/>
+
+                        <Label
+                            Grid.Column="1"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="{Binding FullName}"
+                            VerticalOptions="Center"
+                            TextColor="Black"/>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               FontSize="15"
+                               Text="{Binding Email}"
+                               TextColor="Black"/>
+
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               FontSize="15"
+                               Text="{Binding Country}"
+                               TextColor="Black"/>
+
+                        <Label Grid.Row="3"
+                               Grid.Column="1"
+                               FontSize="15"
+                               Text="{Binding Telephone}"
+                               TextColor="Black"/>
+
+                    </Grid>
+                    
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        
+    </CollectionView>
+
+</ContentPage>
